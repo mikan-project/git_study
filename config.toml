@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://git-study.web.app'
 languageCode = 'en-us'
 title = '未完Study'
 theme = "hugo-geekdoc"

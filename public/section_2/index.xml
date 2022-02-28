@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitの基礎を学ぼう on 未完Study</title>
-    <link>http://example.org/section_2/</link>
+    <link>https://git-study.web.app/section_2/</link>
     <description>Recent content in Gitの基礎を学ぼう on 未完Study</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/section_2/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://git-study.web.app/section_2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

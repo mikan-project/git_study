@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/header/</loc>
+    <loc>https://git-study.web.app/header/</loc>
   </url><url>
-    <loc>http://example.org/header/getting_started/</loc>
+    <loc>https://git-study.web.app/header/getting_started/</loc>
   </url><url>
-    <loc>http://example.org/section_1/</loc>
+    <loc>https://git-study.web.app/section_1/</loc>
   </url><url>
-    <loc>http://example.org/section_1/history/</loc>
+    <loc>https://git-study.web.app/section_1/history/</loc>
   </url><url>
-    <loc>http://example.org/section_2/</loc>
+    <loc>https://git-study.web.app/section_2/</loc>
   </url><url>
-    <loc>http://example.org/section_3/</loc>
+    <loc>https://git-study.web.app/section_3/</loc>
   </url><url>
-    <loc>http://example.org/section_4/</loc>
+    <loc>https://git-study.web.app/section_4/</loc>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://git-study.web.app/tags/</loc>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://git-study.web.app/</loc>
   </url>
 </urlset>

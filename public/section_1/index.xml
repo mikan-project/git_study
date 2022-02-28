@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>まずはGitについてしろう on 未完Study</title>
-    <link>http://example.org/section_1/</link>
+    <link>https://git-study.web.app/section_1/</link>
     <description>Recent content in まずはGitについてしろう on 未完Study</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/section_1/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://git-study.web.app/section_1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gitの歴史</title>
-      <link>http://example.org/section_1/history/</link>
+      <link>https://git-study.web.app/section_1/history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/section_1/history/</guid>
+      <guid>https://git-study.web.app/section_1/history/</guid>
       <description>Git の歴史</description>
     </item>
     
