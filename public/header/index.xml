@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://git-study.web.app/header/getting_started/</guid>
-      <description>こんにちは！世界</description>
+      <description>このサイトは、未完 Labo が主催のイベント「Git 勉強会 / 共同開発のノウハウを知ろう」の公開資料です。静的サイトジェネレータのHugoが用いられており、hosting は firebase に行っています。
+コードが以下に公開されています。contribute を歓迎します。README にまだフローがまとまっていないので、随時更新いたします。 https://github.com/mikan-project/git_study</description>
     </item>
     
   </channel>

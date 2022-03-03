@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://git-study.web.app/header/getting_started/</guid>
-      <description>こんにちは！世界</description>
+      <description>このサイトは、未完 Labo が主催のイベント「Git 勉強会 / 共同開発のノウハウを知ろう」の公開資料です。静的サイトジェネレータのHugoが用いられており、hosting は firebase に行っています。
+コードが以下に公開されています。contribute を歓迎します。README にまだフローがまとまっていないので、随時更新いたします。 https://github.com/mikan-project/git_study</description>
     </item>
     
     <item>
@@ -99,6 +100,19 @@ merge     ローカルリポジトリにて、別のブランチの状態を今�
 &amp;gt; git merge [別ブランチ名] とすれば反映されます。
 pull     リモートリポジトリのあるブランチの状態が誰かによって変更されて、自分のローカルリポジトリと状態が異なっている場合、
 &amp;gt; git pull origin [ブランチ名] とすることで、そのブランチの最新状態（リモートリポジトリの状態）を取り込むことができます。</description>
+    </item>
+    
+    <item>
+      <title>実際に開発してみよう</title>
+      <link>https://git-study.web.app/section_3/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_3/introduction/</guid>
+      <description>何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。
+皆さんが修正するのは、この資料です。 URL: https://github.com/mikan-project/git_study
+この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。
+ 何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。
+ issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -&amp;gt; push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  </description>
     </item>
     
   </channel>

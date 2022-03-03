@@ -8,18 +8,13 @@
 <meta name="generator" content="Hugo 0.92.2" />
 
 
-  <meta name="description" content="ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！
-Git を使えるようになるにあたって、リポジトリィというのはとても重要な概念です。
-リポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。
-下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。
-さあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。
-以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。
-できた！
-ローカルにリポジトリを作る     何らかのファイルが入っているディレクトリを用意します。例えば、
-&gt; ls hoge.txt huga.png みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）
-&gt; git init &gt; git add . &gt; git commit -m &quot;initial commit&quot; &gt; git branch -M main // [自分の作ったリポジトリのURL].git です。 &gt; git remote add origin https://github.com/hogehoge/hugahuga.git &gt; git push -u origin main できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。" />
+  <meta name="description" content="何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。
+皆さんが修正するのは、この資料です。 URL: https://github.com/mikan-project/git_study
+この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。
+ 何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。
+ issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -&gt; push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  " />
 
-    <title>リポジトリを作ってみよう | </title>
+    <title>実際に開発してみよう | </title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -40,53 +35,43 @@ Git を使えるようになるにあたって、リポジトリィというの�
     
   <meta
     property="og:title"
-    content="リポジトリを作ってみよう"
+    content="実際に開発してみよう"
   />
-  <meta property="og:description" content="ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！
-Git を使えるようになるにあたって、リポジトリィというのはとても重要な概念です。
-リポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。
-下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。
-さあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。
-以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。
-できた！
-ローカルにリポジトリを作る     何らかのファイルが入っているディレクトリを用意します。例えば、
-&gt; ls hoge.txt huga.png みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）
-&gt; git init &gt; git add . &gt; git commit -m &#34;initial commit&#34; &gt; git branch -M main // [自分の作ったリポジトリのURL].git です。 &gt; git remote add origin https://github.com/hogehoge/hugahuga.git &gt; git push -u origin main できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。" />
+  <meta property="og:description" content="何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。
+皆さんが修正するのは、この資料です。 URL: https://github.com/mikan-project/git_study
+この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。
+ 何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。
+ issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -&gt; push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://git-study.web.app/section_2/concept/" />
+<meta property="og:url" content="https://git-study.web.app/section_3/introduction/" />
 
-<meta property="article:section" content="Section 2" />
+<meta property="article:section" content="Section 3" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="リポジトリを作ってみよう" />
-  <meta name="twitter:description" content="ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！
-Git を使えるようになるにあたって、リポジトリィというのはとても重要な概念です。
-リポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。
-下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。
-さあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。
-以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。
-できた！
-ローカルにリポジトリを作る     何らかのファイルが入っているディレクトリを用意します。例えば、
-&gt; ls hoge.txt huga.png みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）
-&gt; git init &gt; git add . &gt; git commit -m &#34;initial commit&#34; &gt; git branch -M main // [自分の作ったリポジトリのURL].git です。 &gt; git remote add origin https://github.com/hogehoge/hugahuga.git &gt; git push -u origin main できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。" />
+<meta name="twitter:title" content="実際に開発してみよう" />
+  <meta name="twitter:description" content="何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。
+皆さんが修正するのは、この資料です。 URL: https://github.com/mikan-project/git_study
+この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。
+ 何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。
+ issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -&gt; push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  " />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "Section 2",
-      "name": "リポジトリを作ってみよう",
-      "url" : "https://git-study.web.app/section_2/concept/",
-      "headline": "リポジトリを作ってみよう",
-      "description": "ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！\nGit を使えるようになるにあたって、リポジトリィというのはとても重要な概念です。\nリポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。\n下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。\nさあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。\n以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。\nできた！\nローカルにリポジトリを作る     何らかのファイルが入っているディレクトリを用意します。例えば、\n\u003e ls hoge.txt huga.png みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）\n\u003e git init \u003e git add . \u003e git commit -m \u0022initial commit\u0022 \u003e git branch -M main \/\/ [自分の作ったリポジトリのURL].git です。 \u003e git remote add origin https:\/\/github.com\/hogehoge\/hugahuga.git \u003e git push -u origin main できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。",
-      "wordCount" : "61",
+      "articleSection": "Section 3",
+      "name": "実際に開発してみよう",
+      "url" : "https://git-study.web.app/section_3/introduction/",
+      "headline": "実際に開発してみよう",
+      "description": "何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。\n皆さんが修正するのは、この資料です。 URL: https:\/\/github.com\/mikan-project\/git_study\nこの資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。\n 何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。\n issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -\u003e push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  ",
+      "wordCount" : "29",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://git-study.web.app/section_2/concept/"
+          "@id": "https://git-study.web.app/section_3/introduction/"
       },
       "copyrightHolder" : "",
       "copyrightYear" : "0001",
@@ -168,7 +153,7 @@ Git を使えるようになるにあたって、リポジトリィというの�
   href="/custom.css"
   media="all"
 />
-  <link href="https://git-study.web.app/section_2/concept/" rel="canonical" type="text/html" />
+  <link href="https://git-study.web.app/section_3/introduction/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -608,7 +593,7 @@ Git を使えるようになるにあたって、リポジトリィというの�
                 <span class="flex">
                   <a
                     href="/section_2/concept/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     リポジトリを作ってみよう
                   </a>
@@ -791,7 +776,7 @@ Git を使えるようになるにあたって、リポジトリィというの�
                 <span class="flex">
                   <a
                     href="/section_3/introduction/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     実際に開発してみよう
                   </a>
@@ -915,7 +900,7 @@ Git を使えるようになるにあたって、リポジトリィというの�
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/section_2/' href='/section_2/'><span itemprop='name'>Gitの基礎を学ぼう</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>リポジトリを作ってみよう</span><meta itemprop='position' content='3' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/section_3/' href='/section_3/'><span itemprop='name'>実践的に使ってみよう</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>実際に開発してみよう</span><meta itemprop='position' content='3' /></li>
   
 
   
@@ -933,46 +918,42 @@ Git を使えるようになるにあたって、リポジトリィというの�
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>リポジトリを作ってみよう</h1>
-    <p>ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！</p>
-<p>Git を使えるようになるにあたって、<strong>リポジトリィ</strong>というのはとても重要な概念です。</p>
-<p>リポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。</p>
-<img src="/repository.png" width="450px"/>
-<p>下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（<strong>clone</strong>と言います）、リポジトリの中のファイルを変更してそれを Github に送ります（<strong>push</strong>といいます）。</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="さあやってみよう">
-        さあ、やってみよう！
-        <a data-clipboard-text="https://git-study.web.app/section_2/concept/#さあやってみよう" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: さあ、やってみよう！" aria-label="Anchor to: さあ、やってみよう！" href="#%e3%81%95%e3%81%82%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div>
-<p>Github 上に repository を作ってみましょう。以下のメニューにある<code>New repository</code>をクリックします。</p>
-<img src="/new_repository.png" width="600px" />
-<p>以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（<code>plivate</code>か<code>public</code>か）などを選択します。</p>
-<img src="/settings_repository.png" width="500px" />
-<p>できた！</p>
-<img src="/created_repository.png" width="500px" />
-<div class="gdoc-page__anchorwrap">
-    <h3 id="ローカルにリポジトリを作る">
-        ローカルにリポジトリを作る
-        <a data-clipboard-text="https://git-study.web.app/section_2/concept/#ローカルにリポジトリを作る" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: ローカルにリポジトリを作る" aria-label="Anchor to: ローカルにリポジトリを作る" href="#%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%81%ab%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e4%bd%9c%e3%82%8b">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h3>
-</div>
-<p>何らかのファイルが入っているディレクトリを用意します。例えば、</p>
-<pre tabindex="0"><code>&gt; ls
-hoge.txt huga.png
-</code></pre><p>みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）</p>
-<pre tabindex="0"><code>&gt; git init
-&gt; git add .
-&gt; git commit -m &quot;initial commit&quot;
-&gt; git branch -M main
-// [自分の作ったリポジトリのURL].git です。
-&gt; git remote add origin https://github.com/hogehoge/hugahuga.git
-&gt; git push -u origin main
-</code></pre><p>できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。</p>
+    <h1>実際に開発してみよう</h1>
+    <p>何となく基礎についてわかってきたところで、実際に世の中に公開されているサービスを修正して git で反映させてみましょう。</p>
+<p>皆さんが修正するのは、この資料です。
+URL: <a
+  class="gdoc-markdown__link"
+  href="https://github.com/mikan-project/git_study"
+  
+>https://github.com/mikan-project/git_study</a></p>
+<p>この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。</p>
+<hr>
+<p>何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。</p>
+<ol>
+<li>issue を発行する
+<ul>
+<li>どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）</li>
+</ul>
+</li>
+<li>ローカルが最新状態であることを確認して、ブランチを切る
+<ul>
+<li><a
+  class="gdoc-markdown__link"
+  href="/section_2/branch/#checkout"
+  
+>これ</a>です</li>
+<li>ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。</li>
+</ul>
+</li>
+<li>いろいろ修正する。</li>
+<li>commit -&gt; push する。</li>
+<li>pull request を出す。
+<ul>
+<li>リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。</li>
+</ul>
+</li>
+<li>pull request が良ければマージ（反映）</li>
+</ol>
 
   </article>
 
