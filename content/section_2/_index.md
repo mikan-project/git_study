@@ -1,4 +1,4 @@
 ---
 title: "Gitの基礎を学ぼう"
-weight: 5
+weight: 6
 ---

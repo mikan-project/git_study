@@ -10,14 +10,18 @@
   </url><url>
     <loc>https://git-study.web.app/section_1/history/</loc>
   </url><url>
+    <loc>https://git-study.web.app/section_1/settings/</loc>
+  </url><url>
     <loc>https://git-study.web.app/section_2/</loc>
+  </url><url>
+    <loc>https://git-study.web.app/section_2/concept/</loc>
   </url><url>
     <loc>https://git-study.web.app/section_3/</loc>
   </url><url>
     <loc>https://git-study.web.app/section_4/</loc>
   </url><url>
-    <loc>https://git-study.web.app/tags/</loc>
-  </url><url>
     <loc>https://git-study.web.app/</loc>
+  </url><url>
+    <loc>https://git-study.web.app/tags/</loc>
   </url>
 </urlset>

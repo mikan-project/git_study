@@ -1,6 +1,6 @@
 baseURL = 'https://git-study.web.app'
 languageCode = 'en-us'
-title = '未完Study'
+title = ''
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false

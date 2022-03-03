@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gitの基礎を学ぼう on 未完Study</title>
+    <title>Gitの基礎を学ぼう on </title>
     <link>https://git-study.web.app/section_2/</link>
-    <description>Recent content in Gitの基礎を学ぼう on 未完Study</description>
+    <description>Recent content in Gitの基礎を学ぼう on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://git-study.web.app/section_2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>リポジトリを作ってみよう</title>
+      <link>https://git-study.web.app/section_2/concept/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_2/concept/</guid>
+      <description>ここまできたら、あとはコマンドを使えるようになるだけです。そんな難しくないですよ！
+Git を使えるようになるにあたって、リポジトリィというのはとても重要な概念です。
+リポジトリとは、以下のようにバージョンを管理するプロジェクトごとに作られ、その中の各ファイルの変更履歴の他、issue やブランチの情報が入っています。
+下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。
+さあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。
+以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。
+できた！</description>
+    </item>
+    
   </channel>
 </rss>

@@ -114,6 +114,7 @@
   img {
     max-width: 100%;
     border-radius: $border-radius;
+    margin: 36px 0;
   }
 
   blockquote {
@@ -239,5 +240,11 @@
       }
       text-align: right;
     }
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 48px;
   }
 }

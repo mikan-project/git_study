@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>まずはGitについてしろう on 未完Study</title>
+    <title>Gitに入門しよう on </title>
     <link>https://git-study.web.app/section_1/</link>
-    <description>Recent content in まずはGitについてしろう on 未完Study</description>
+    <description>Recent content in Gitに入門しよう on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://git-study.web.app/section_1/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gitの歴史</title>
+      <title>結局Gitって何？</title>
       <link>https://git-study.web.app/section_1/history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://git-study.web.app/section_1/history/</guid>
-      <description>Git の歴史</description>
+      <description>Git とは     みんなが書くソースコードなどのファイルの変更履歴を管理する分散型バージョン管理システムのことを言います。
+下のように複数人で何か作ろうとしたときに、いい感じに変更履歴とかを残してくれます。
+逆に、変更を全部 Google docs とかでやったらどうなるか、考えてみましょう。
+Git の歴史     Git は、linux を作ったリナーストーバルスさんによって作られました。
+もともと linux カーネルのソースコード管理のために BitKeeper ってやつがあったらしいけど、いろいろ揉めてトーバルスさんが自分で作ることになったらしいです。</description>
+    </item>
+    
+    <item>
+      <title>Gitを使えるようにしよう</title>
+      <link>https://git-study.web.app/section_1/settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_1/settings/</guid>
+      <description>では、自分の PC で Git を使えるようにインストールしましょう
+mac 編     なんと！最初っから入っています。
+なんらかのターミナルを開いて、以下のコマンドを打ってみましょう。
+&amp;gt; git --version インストールされている Git のバージョンが出力されると思います。もしインストールされていなければ、command not foundみたいな出力になると思います。
+Windows 編     ここから Git をインストールします。いろいろ modal が出てくるのでポチポチしてください。
+終わったら、Git bashというアプリケーションが入っていると思います。開いてみましょう。あったら、以下のようなコマンドを叩いてみましょう。
+&amp;gt; git --version 何かバージョンが出力されていたら OK!
+Github のアカウントを作ろう     Github とは     Git を利用して、世界中のコードを保存したり公開したりできるサービスです。いろんな企業のサービスのコードを見る事ができます。
+Github にコードを保存して、複数人で Github に変更を伝えたりするイメージです。。コードの変更だけでなく、共同開発に適した機能が多く搭載されています。
+アカウントを作りましょう     ここから sign up して登録します。
+自分の環境に設定を加えよう     自分の Github のアカウントをローカルに紐付けます。 以下のコマンドを入力してください。</description>
     </item>
     
   </channel>
