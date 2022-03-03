@@ -8,8 +8,13 @@
 <meta name="generator" content="Hugo 0.92.2" />
 
 
+  <meta name="description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
+add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
+commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
+push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
+これであなたも git 使えるようになりましたね！" />
 
-    <title></title>
+    <title>基礎的なコマンドを理解しよう | </title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -28,23 +33,62 @@
     
 
     
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://git-study.web.app/" />
+  <meta
+    property="og:title"
+    content="基礎的なコマンドを理解しよう"
+  />
+  <meta property="og:description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
+add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
+commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
+push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
+これであなたも git 使えるようになりましたね！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://git-study.web.app/section_2/detail/" />
 
-
+<meta property="article:section" content="Section 2" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="" />
+<meta name="twitter:title" content="基礎的なコマンドを理解しよう" />
+  <meta name="twitter:description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
+add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
+commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
+push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
+これであなたも git 使えるようになりましたね！" />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "",
-      "url": "https://git-study.web.app",
-      "inLanguage": "en"
+      "@type": "TechArticle",
+      "articleSection": "Section 2",
+      "name": "基礎的なコマンドを理解しよう",
+      "url" : "https://git-study.web.app/section_2/detail/",
+      "headline": "基礎的なコマンドを理解しよう",
+      "description": "ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。\nadd     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。\ncommit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。\npush     ローカルリポジトリの変更をリモートリポジトリに反映させます。\nこれであなたも git 使えるようになりましたね！",
+      "wordCount" : "16",
+      "inLanguage": "en",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://git-study.web.app/section_2/detail/"
+      },
+      "copyrightHolder" : "",
+      "copyrightYear" : "0001",
+      "dateCreated": "0001-01-01T00:00:00.00Z",
+      "datePublished": "0001-01-01T00:00:00.00Z",
+      "dateModified": "0001-01-01T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "",
+          "url": "https://git-study.web.app",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://git-study.web.app/brand.svg",
+              "width":"32",
+              "height":"32"
+          }
+      }
   }
   </script>
 
@@ -109,7 +153,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="https://git-study.web.app/" rel="canonical" type="text/html" />
+  <link href="https://git-study.web.app/section_2/detail/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -594,7 +638,7 @@
                 <span class="flex">
                   <a
                     href="/section_2/detail/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     基礎的なコマンドを理解しよう
                   </a>
@@ -789,7 +833,23 @@
         
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'></span><meta itemprop='position' content='1' /></li>
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/section_2/' href='/section_2/'><span itemprop='name'>Gitの基礎を学ぼう</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>基礎的なコマンドを理解しよう</span><meta itemprop='position' content='3' /></li>
+  
+
+  
+
   
 
       </ol>
@@ -803,8 +863,41 @@
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1></h1>
-    
+    <h1>基礎的なコマンドを理解しよう</h1>
+    <p>ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="add">
+        add
+        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#add" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: add" aria-label="Anchor to: add" href="#add">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>変更を加えたいファイルを<strong>インデックス</strong>または<strong>ステージング</strong>に追加します。<code>git add .</code>とすると、変更しているファイル全てをインデックスに追加することができます。</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="commit">
+        commit
+        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#commit" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: commit" aria-label="Anchor to: commit" href="#commit">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。<a
+  class="gdoc-markdown__link"
+  href="https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e"
+  
+>こんな記事</a>もあります。</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="push">
+        push
+        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#push" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: push" aria-label="Anchor to: push" href="#push">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>ローカルリポジトリの変更をリモートリポジトリに反映させます。</p>
+<p>これであなたも git 使えるようになりましたね！</p>
+
   </article>
 
 

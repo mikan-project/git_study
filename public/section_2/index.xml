@@ -18,7 +18,46 @@ Git を使えるようになるにあたって、リポジトリィというの�
 下のように、各エンジニアは Github 上にある（自分で作った）リポジトリを自分の PC に取り込み（cloneと言います）、リポジトリの中のファイルを変更してそれを Github に送ります（pushといいます）。
 さあ、やってみよう！     Github 上に repository を作ってみましょう。以下のメニューにあるNew repositoryをクリックします。
 以下にリポジトリ名や、世の中に公開するか許可した人じゃないとみれないようにするか（plivateかpublicか）などを選択します。
-できた！</description>
+できた！
+ローカルにリポジトリを作る     何らかのファイルが入っているディレクトリを用意します。例えば、
+&amp;gt; ls hoge.txt huga.png みたいな感じ。その状態で、以下のコマンドを打ちます。（上記画像に指定されているのと同じです）
+&amp;gt; git init &amp;gt; git add . &amp;gt; git commit -m &amp;quot;initial commit&amp;quot; &amp;gt; git branch -M main // [自分の作ったリポジトリのURL].git です。 &amp;gt; git remote add origin https://github.com/hogehoge/hugahuga.git &amp;gt; git push -u origin main できたら、先ほど作ったリポジトリのページにアクセスしてください。ファイルが公開されていますか。</description>
+    </item>
+    
+    <item>
+      <title>基礎的なコマンドを理解しよう</title>
+      <link>https://git-study.web.app/section_2/detail/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_2/detail/</guid>
+      <description>ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
+add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
+commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
+push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
+これであなたも git 使えるようになりましたね！</description>
+    </item>
+    
+    <item>
+      <title>ブランチについて理解しよう</title>
+      <link>https://git-study.web.app/section_2/branch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_2/branch/</guid>
+      <description>Git を使えるようになるにあたって、branchは最も重要な仕組みの 1 つです。
+ブランチというのは、レポジトリの変更を分岐しながら残していくためのものです。
+複数人が同時並行で開発する時、ある人の変更と自分の変更が被ったりしたらよく分からなくなってしまいます。
+ブランチを分岐しながら開発していき、その後メインのブランチに反映させることで、そのような課題をなくすことができます。
+(引用: https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
+新しくリポジトリを作成した時、メインのリポジトリはmainという名前になっています。ここから、とある作業を行いたい時は別のブランチに行って作業を行い、そのままリモートのリポジトリにそれを伝えます。
+その後、あなたの作業が承認されたら、mainにあなたの変更を反映する、といった流れで開発することで、一番メインの状態が安全に担保される形になります。
+コマンドを理解しよう     checkout     別のブランチに移動するコマンドです。例えば、mainブランチにいる際に違う作業をするブランチに移動したかったら
+&amp;gt; git checkout [ブランチ名] とすることで移動できます。
+ここから新しくブランチを作って移動したい、ということがあれば
+&amp;gt; git checkout -b [新しいブランチ名] としてください。
+merge     ローカルリポジトリにて、別のブランチの状態を今のブランチに反映させたい際には、今のブランチにいる状態で
+&amp;gt; git merge [別ブランチ名] とすれば反映されます。
+pull     リモートリポジトリのあるブランチの状態が誰かによって変更されて、自分のローカルリポジトリと状態が異なっている場合、
+&amp;gt; git pull origin [ブランチ名] とすることで、そのブランチの最新状態（リモートリポジトリの状態）を取り込むことができます。</description>
     </item>
     
   </channel>
