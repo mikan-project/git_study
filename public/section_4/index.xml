@@ -7,13 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://git-study.web.app/section_4/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Githubのいい感じの使い方</title>
+      <title>Githubの実践的な使い方</title>
       <link>https://git-study.web.app/section_4/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://git-study.web.app/section_4/github/</guid>
       <description>さて、git についてある程度理解し、contribute できたところで、より実践的な手法について学んでいきましょう。
-まずは、Github についてです。</description>
+まずは、Github についてです。
+Github Actions     この説明のためには、まず CI/CDについて理解しておく必要があります。Circle Ci とか聞いたことがある方もいらっしゃるかもしれません。同じようなものです。
+  CI は、Continuous Integration の略で、継続的インテグレーションと訳されます。 チーム開発の際に複数のブランチで並行作業が行われるとします。その際、それぞれで「build が正常に行くこと」や「意図した挙動を正常に示すこと（テストが通ること）」を検証しながら進めていく必要があります。
+例えば「PR を発行した時」や「リモートリポジトリに push した時」に自動で CI を検証することで、コードの安全性を担保したり、開発効率化をすることができます。
+  CD は、Continuous Deployment の略で、継続的デプロイメントと訳されます。 これは、CI を自動で行うだけでなく、その後のリリースまでも自動化する、ということです。
+  Github Actions というのは、PR や commit をトリガーとして、CI/CD を自動で行ってくれるサービスになります。主にリポジトリごとに設定します。例えば以下のような感じです。
+.github/workflows/deploy.yml
+ name: CI on: push: branches: [ main ] // mainブランチにpushされた時（マージされた時） jobs: deploy: name: Deploy to Firebase runs-on: ubuntu-latest // 最新のubuntuコンテナで実行させます steps: - name: Checkout Repo uses: actions/checkout@v1 - name: setup Node uses: actions/setup-node@v1 // nodeの設定をしてくれる with: node-version: 16.</description>
+    </item>
+    
+    <item>
+      <title>ブランチの運用方法</title>
+      <link>https://git-study.web.app/section_4/branch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_4/branch/</guid>
+      <description>ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。
+ 有名なものとして、Github Flow と Git Flow と呼ばれるものがあります。
+Git Flow     参考はこちら
+Git Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。
+開発用ブランチ（develop ブランチ）と作業ブランチ（feature/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。
+Github Flow     Git Flow に比べてシンプルなモデルです。
+Git Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。
+そのため、PR を多用してレビューすることになります。
+ここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。</description>
     </item>
     
   </channel>

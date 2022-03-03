@@ -8,13 +8,17 @@
 <meta name="generator" content="Hugo 0.92.2" />
 
 
-  <meta name="description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
-add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
-commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
-push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
-これであなたも git 使えるようになりましたね！" />
+  <meta name="description" content="ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。
+ 有名なものとして、Github Flow と Git Flow と呼ばれるものがあります。
+Git Flow     参考はこちら
+Git Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。
+開発用ブランチ（develop ブランチ）と作業ブランチ（feature/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。
+Github Flow     Git Flow に比べてシンプルなモデルです。
+Git Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。
+そのため、PR を多用してレビューすることになります。
+ここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。" />
 
-    <title>基礎的なコマンドを理解しよう | </title>
+    <title>ブランチの運用方法 | </title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -35,43 +39,51 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
     
   <meta
     property="og:title"
-    content="基礎的なコマンドを理解しよう"
+    content="ブランチの運用方法"
   />
-  <meta property="og:description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
-add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
-commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
-push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
-これであなたも git 使えるようになりましたね！" />
+  <meta property="og:description" content="ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。
+ 有名なものとして、Github Flow と Git Flow と呼ばれるものがあります。
+Git Flow     参考はこちら
+Git Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。
+開発用ブランチ（develop ブランチ）と作業ブランチ（feature/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。
+Github Flow     Git Flow に比べてシンプルなモデルです。
+Git Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。
+そのため、PR を多用してレビューすることになります。
+ここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://git-study.web.app/section_2/detail/" />
+<meta property="og:url" content="https://git-study.web.app/section_4/branch/" />
 
-<meta property="article:section" content="Section 2" />
+<meta property="article:section" content="Section 4" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="基礎的なコマンドを理解しよう" />
-  <meta name="twitter:description" content="ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。
-add     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。
-commit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。
-push     ローカルリポジトリの変更をリモートリポジトリに反映させます。
-これであなたも git 使えるようになりましたね！" />
+<meta name="twitter:title" content="ブランチの運用方法" />
+  <meta name="twitter:description" content="ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。
+ 有名なものとして、Github Flow と Git Flow と呼ばれるものがあります。
+Git Flow     参考はこちら
+Git Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。
+開発用ブランチ（develop ブランチ）と作業ブランチ（feature/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。
+Github Flow     Git Flow に比べてシンプルなモデルです。
+Git Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。
+そのため、PR を多用してレビューすることになります。
+ここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。" />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "Section 2",
-      "name": "基礎的なコマンドを理解しよう",
-      "url" : "https://git-study.web.app/section_2/detail/",
-      "headline": "基礎的なコマンドを理解しよう",
-      "description": "ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。\nadd     変更を加えたいファイルをインデックスまたはステージングに追加します。git add .とすると、変更しているファイル全てをインデックスに追加することができます。\ncommit     インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。こんな記事もあります。\npush     ローカルリポジトリの変更をリモートリポジトリに反映させます。\nこれであなたも git 使えるようになりましたね！",
-      "wordCount" : "16",
+      "articleSection": "Section 4",
+      "name": "ブランチの運用方法",
+      "url" : "https://git-study.web.app/section_4/branch/",
+      "headline": "ブランチの運用方法",
+      "description": "ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。\n 有名なものとして、Github Flow と Git Flow と呼ばれるものがあります。\nGit Flow     参考はこちら\nGit Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。\n開発用ブランチ（develop ブランチ）と作業ブランチ（feature\/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。\nGithub Flow     Git Flow に比べてシンプルなモデルです。\nGit Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。\nそのため、PR を多用してレビューすることになります。\nここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。",
+      "wordCount" : "48",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://git-study.web.app/section_2/detail/"
+          "@id": "https://git-study.web.app/section_4/branch/"
       },
       "copyrightHolder" : "",
       "copyrightYear" : "0001",
@@ -153,7 +165,7 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
   href="/custom.css"
   media="all"
 />
-  <link href="https://git-study.web.app/section_2/detail/" rel="canonical" type="text/html" />
+  <link href="https://git-study.web.app/section_4/branch/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -638,7 +650,7 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
                 <span class="flex">
                   <a
                     href="/section_2/detail/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     基礎的なコマンドを理解しよう
                   </a>
@@ -914,7 +926,7 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
                 <span class="flex">
                   <a
                     href="/section_4/branch/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     ブランチの運用方法
                   </a>
@@ -1000,7 +1012,7 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/section_2/' href='/section_2/'><span itemprop='name'>Gitの基礎を学ぼう</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>基礎的なコマンドを理解しよう</span><meta itemprop='position' content='3' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/section_4/' href='/section_4/'><span itemprop='name'>応用的な運用を知ろう</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>ブランチの運用方法</span><meta itemprop='position' content='3' /></li>
   
 
   
@@ -1018,41 +1030,39 @@ push     ローカルリポジトリの変更をリモートリポジトリに�
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>基礎的なコマンドを理解しよう</h1>
-    <p>ここで、リポジトリを作る際に使った基礎的なコマンドについて紹介します。自分の変更をリモートに反映させたい時は、local のレポジトリに変更を加え、それを remote リポジトリに反映させる、という流れになります。</p>
-<img src="/commit.png" width="400px" />
+    <h1>ブランチの運用方法</h1>
+    <p>ブランチの基礎について勉強しましたが、どう使っていけばいいかわかりづらいと思います。ここでは、branch の実践的に運用方法の例について紹介します。これは数人以上のプロジェクトに適していることが多く、逆に個人開発では意識する必要がありません。</p>
+<hr>
+<p>有名なものとして、<strong>Github Flow</strong> と <strong>Git Flow</strong> と呼ばれるものがあります。</p>
 <div class="gdoc-page__anchorwrap">
-    <h3 id="add">
-        add
-        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#add" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: add" aria-label="Anchor to: add" href="#add">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h3>
-</div>
-<p>変更を加えたいファイルを<strong>インデックス</strong>または<strong>ステージング</strong>に追加します。<code>git add .</code>とすると、変更しているファイル全てをインデックスに追加することができます。</p>
-<div class="gdoc-page__anchorwrap">
-    <h3 id="commit">
-        commit
-        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#commit" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: commit" aria-label="Anchor to: commit" href="#commit">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h3>
-</div>
-<p>インデックスに追加されているファイルをリポジトリに反映させるコマンドです。commit にはメッセージを添付する必要があります。<a
-  class="gdoc-markdown__link"
-  href="https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e"
-  
->こんな記事</a>もあります。</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="push">
-        push
-        <a data-clipboard-text="https://git-study.web.app/section_2/detail/#push" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: push" aria-label="Anchor to: push" href="#push">
+    <h2 id="git-flow">
+        Git Flow
+        <a data-clipboard-text="https://git-study.web.app/section_4/branch/#git-flow" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Git Flow" aria-label="Anchor to: Git Flow" href="#git-flow">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>ローカルリポジトリの変更をリモートリポジトリに反映させます。</p>
-<p>これであなたも git 使えるようになりましたね！</p>
+<p>参考は<a
+  class="gdoc-markdown__link"
+  href="https://nvie.com/posts/a-successful-git-branching-model/"
+  
+>こちら</a></p>
+<p>Git Flow は、かなり複雑なモデルです。慎重で決まったリリースを行うプロダクト（モバイルアプリ）などに適していると言われています。</p>
+<img src="/git_flow.png" width="400px">
+<p>開発用ブランチ（develop ブランチ）と作業ブランチ（feature/hogehoge とする命名が良いと思います）をベースに開発を進め、release ブランチでリリース確認を行い、問題なければ master にマージする手法です。</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="github-flow">
+        Github Flow
+        <a data-clipboard-text="https://git-study.web.app/section_4/branch/#github-flow" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Github Flow" aria-label="Anchor to: Github Flow" href="#github-flow">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>Git Flow に比べてシンプルなモデルです。</p>
+<p>Git Flow では develop ブランチから作業するのに対し、これは main ブランチからブランチを切ります。Git Flow の develop ブランチは常に正しいコードではなく、作業ブランチで徐々に不安点を解消していきながら release と向かっていく一方で、Github Flow は main ブランチが問題なく動くことを担保させなければいけないので、慎重にマージしていくことになります。</p>
+<p>そのため、PR を多用してレビューすることになります。</p>
+<img src="/github_flow.png" width="400px" />
+<p>ここでは 2 種類の主なモデルを紹介しましたが、実際には良いところを混合させたり、staging の運用等チーム状況を踏まえた設計になることが多いです。</p>
 
   </article>
 
