@@ -103,7 +103,7 @@ pull     リモートリポジトリのあるブランチの状態が誰かに�
     </item>
     
     <item>
-      <title>実際に開発してみよう</title>
+      <title>開発の流れ</title>
       <link>https://git-study.web.app/section_3/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -113,6 +113,16 @@ pull     リモートリポジトリのあるブランチの状態が誰かに�
 この資料は不完全で、資料の充実をさせていくだけでなく、typo ミスなど、改善点が多くあります。
  何かプロジェクトを修正して反映させようとすると、以下がよくある流れだと思います。
  issue を発行する  どんなバグがあるか、あるいはどんな課題を解決したいのか、どんな機能を追加したいのか、など（粒度はチームによって様々だし、いろんな使い方があります。）   ローカルが最新状態であることを確認して、ブランチを切る  これです ブランチを新しく生やすことを「ブランチを切る」と言ったりします。命名については後ほど。とりあえずなんでもいいと思います。   いろいろ修正する。 commit -&amp;gt; push する。 pull request を出す。  リモートリポジトリにて、とあるブランチの変更をあるブランチに反映させたい時は、pull request を送ります。   pull request が良ければマージ（反映）  </description>
+    </item>
+    
+    <item>
+      <title>Githubのいい感じの使い方</title>
+      <link>https://git-study.web.app/section_4/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_4/github/</guid>
+      <description>さて、git についてある程度理解し、contribute できたところで、より実践的な手法について学んでいきましょう。
+まずは、Github についてです。</description>
     </item>
     
   </channel>

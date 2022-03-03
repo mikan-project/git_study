@@ -6,5 +6,15 @@
     <description>Recent content in 応用的な運用を知ろう on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://git-study.web.app/section_4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Githubのいい感じの使い方</title>
+      <link>https://git-study.web.app/section_4/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://git-study.web.app/section_4/github/</guid>
+      <description>さて、git についてある程度理解し、contribute できたところで、より実践的な手法について学んでいきましょう。
+まずは、Github についてです。</description>
+    </item>
+    
   </channel>
 </rss>
