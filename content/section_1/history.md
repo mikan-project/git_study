@@ -15,6 +15,6 @@ weight: 4
 
 ## Git の歴史
 
-Git は、linux を作った[リーナス・トーバルズ](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%BC%E3%83%8A%E3%82%B9%E3%83%BB%E3%83%88%E3%83%BC%E3%83%90%E3%83%AB%E3%82%BA)さんによって作られました。
+Git は、linux を作った[リナーストーバルス](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%BC%E3%83%8A%E3%82%B9%E3%83%BB%E3%83%88%E3%83%BC%E3%83%90%E3%83%AB%E3%82%BA)さんによって作られました。
 
 もともと linux カーネルのソースコード管理のために BitKeeper ってやつがあったらしいけど、いろいろ揉めてトーバルスさんが自分で作ることになったらしいです。
