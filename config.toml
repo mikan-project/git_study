@@ -1,4 +1,3 @@
-baseURL = 'https://git-study.web.app'
 languageCode = 'en-us'
 title = ''
 theme = "hugo-geekdoc"
